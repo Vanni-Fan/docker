@@ -1,0 +1,14 @@
+version: "3"
+services:
+   zentao:
+      image: idoop/zentao:latest
+      container_name: zentao
+      environment:
+        - ADMINER_USER=root
+        - ADMINER_PASSWD=oNoN1LDOEWZ
+      volumes:
+        - /data/zentao/:/opt/zbox/
+      restart: always
+      ports:
+        - 8081:80
+        - 3306:3306

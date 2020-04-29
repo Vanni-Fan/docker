@@ -1,0 +1,5 @@
+server.name: kibana
+server.host: "0"
+elasticsearch.hosts: ["http://host.docker.internal:9200"]
+server.port: 5601
+i18n.locale: "zh-CN"

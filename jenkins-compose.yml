@@ -1,0 +1,13 @@
+version: "3"
+services:
+   jenkins:
+      image: jenkinszh/jenkins-zh:lts
+      container_name: jenkins
+      user: root
+      environment:
+        - JAVA_OPTS=-Duser.timezone=Asia/Shanghai
+      volumes:
+        - /data/jenkins:/var/jenkins_home
+      restart: always
+      ports:
+        - 8080:8080

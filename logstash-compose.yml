@@ -1,0 +1,14 @@
+version: '3'
+services:
+  logstash:
+    image: registry.cn-hangzhou.aliyuncs.com/vanni/logstash:7.6.2-mysql-es
+    container_name: logstash
+    volumes:
+      - ./es/logstash/sql:/usr/share/logstash/config/sql
+      - ./es/logstash/lastid:/usr/share/logstash/config/lastid
+      - ./es/logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./es/logstash/logstash.conf:/usr/share/logstash/pipeline/logstash.conf
+    ports:
+      - 5044:5044
+      - 9600:9600
+    restart: always
