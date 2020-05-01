@@ -1,0 +1,8 @@
+# https://github.com/elastic/dockerfiles/blob/v7.6.2/logstash/Dockerfile
+FROM logstash:7.6.2
+
+RUN logstash-plugin install --no-verify logstash-integration-jdbc
+RUN logstash-plugin install --no-verify logstash-output-elasticsearch
+
+# mysql-connector-java 可在maven官网下载驱动：https://mvnrepository.com/artifact/mysql/mysql-connector-java
+ADD mysql-connector-java-8.0.19.jar /usr/share/java/mysql-connector-java-8.0.19.jar
